@@ -1,0 +1,5 @@
+libflatarray (0.3.0) stable; urgency=low
+
+  * Initial Debian package
+
+ -- Andreas Schaefer <gentryx.gmx.de>  Tue, 09 Aug 2016 19:34:31 +0100

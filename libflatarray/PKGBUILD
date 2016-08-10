@@ -1,0 +1,33 @@
+pkgname=libflatarray
+pkgver=0.3.0
+pkgrel=1
+pkgdesc="LibFlatArray fixme"
+url="http://libgeodecomp.org/libflatarray.html"
+arch=('any')
+license=('unknown')
+# depends=('hdf5-fortran-cxx')
+optdepends=('doxygen: only needed if you want to produce your own copy of the documentation')
+makedepends=('cmake')
+
+# install="${pkgname}.install"
+# source=("http://www.syntax-on.com/static/$pkgname/$pkgname-$pkgver.tar.gz")
+# source=("http://downloads.sourceforge.net/project/ismrmrd/src/${pkgname}_${pkgver}.zip")
+source=("libflatarray_0.3.0.tar.gz")
+# noextract=("${pkgname}_${pkgver}.zip")
+
+md5sums=("71338bd3fe9261e62667ae827ffdfdbf")
+
+build() {
+  mkdir "${srcdir}"/libflatarray-0.3.0/build
+  cd "${srcdir}"/libflatarray-0.3.0/build
+
+  msg "andi1"
+  cmake -DCMAKE_INSTALL_PREFIX=/usr ../
+  msg "Starting make..."
+  make
+}
+
+package() {
+  cd "${srcdir}/libflatarray-0.3.0/build"
+  make DESTDIR="${pkgdir}/" install
+}

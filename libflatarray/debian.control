@@ -1,0 +1,11 @@
+Source: libflatarray
+Section: devel
+Priority: optional
+Maintainer: Andreas Schaefer <gentryx@gmx.de>
+Build-Depends: debhelper (>= 9), cmake (>= 2.6.4)
+
+Package: libflatarray
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: fixmeA
+ fixmeB blah blah blahy
